@@ -3,6 +3,7 @@
 #include <fcntl.h>
 #include <sys/types.h>
 #include <sys/stat.h>
+#include <unistd.h>
 
 int random_int(){
   int fd = open("/dev/random", O_RDONLY);
@@ -12,7 +13,8 @@ int random_int(){
 }
 
 int main(){
-  for(int a = 0; a < 10; a++){
+  int ia[10];
+  for(a = 0; a < 10; a++){
     printf("%d\n", random_int());
   }
 }
